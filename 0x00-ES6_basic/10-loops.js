@@ -1,9 +1,11 @@
 #!/usr/bin/node
 export default function appendToEachArrayValue(array, appendString) {
-  for (let i = 0; i < array.length; i += 1) {
+  const newArray = [];
+  // eslint-disable-next-line no-restricted-syntax
+  for (const element of array) {
     // eslint-disable-next-line no-param-reassign
-    array[i] = appendString + array[i];
+    newArray.push(appendString + element);
   }
 
-  return array;
+  return newArray;
 }
