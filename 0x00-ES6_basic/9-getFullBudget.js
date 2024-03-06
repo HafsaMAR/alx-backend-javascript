@@ -1,17 +1,18 @@
 #!/usr/bin/node
 // Rewrite getFullBudgetObject to use ES6 method properties in the fullBudget object
 
+// eslint-disable-next-line import/extensions
 import getBudgetObject from './7-getBudgetObject.js';
 
 export default function getFullBudgetObject(income, gdp, capita) {
   const budget = getBudgetObject(income, gdp, capita);
   const fullBudget = {
     ...budget,
-    getIncomeInDollars: function (income) {
-      return `$${income}`;
+    getIncomeInDollars() {
+      return `$${this.income}`;
     },
-    getIncomeInEuros: function (income) {
-      return `${income} euros`;
+    getIncomeInEuros() {
+      return `${this.income} euros`;
     },
   };
 
