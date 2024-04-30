@@ -1,7 +1,8 @@
 #!/usr/bin/node
 
 function displayMessage(message) {
-    console.log(message);
-};
+  // eslint-disable-next-line no-console
+  console.log(message);
+}
 
 module.exports = displayMessage;
